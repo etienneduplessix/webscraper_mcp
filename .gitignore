@@ -1,0 +1,69 @@
+i# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage output
+coverage/
+.nyc_output/
+
+# Build output
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+
+# Environment files
+.env
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+Dockerfile*
+docker-compose*.yml
+
+# MCP SDK bundles (if you ever build to a dist folder)
+dist/esm/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Yarn v2+
+.yarn/*
+!.yarn/patches/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
+.pnp.*
+
+# npm cache
+.npm/
+
+# Optional lock files (uncomment if you use another package manager)
+# yarn.lock
+# package-lock.json
+# pnpm-lock.yaml
+
