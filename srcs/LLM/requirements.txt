@@ -1,0 +1,30 @@
+# FastAPI and web framework
+fastapi==0.111.0
+starlette==0.37.2
+uvicorn==0.30.1
+python-multipart==0.0.9
+
+# CrewAI
+crewai==0.35.8
+
+# LangChain support
+langchain-community==0.0.38
+langchain-core==0.1.52
+
+# PDF parsing
+pymupdf==1.24.7       # PyMuPDF (fitz)
+
+# Data validation & environment
+pydantic==2.8.0
+python-dotenv==1.0.1
+pyyaml==6.0.1
+
+# Networking & HTTP
+requests==2.32.3
+urllib3==2.2.2
+
+# Database (if you’re using it)
+sqlalchemy==2.0.31
+
+# Ollama client
+ollama>=0.3.0
