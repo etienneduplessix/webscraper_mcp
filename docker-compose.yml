@@ -8,30 +8,23 @@ services:
       - "8080:8080"
     environment:
       - TZ=Europe/Prague
-    networks:
-      - webscraper-net
-
-  llm:
-    build:
-      context: ./srcs/LLM
-    container_name: crew_ai_test
-    ports:
-      - "5050:5050"
-    depends_on:
-      - mcp-webscraper
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
     networks:
       - webscraper-net
 
   ollama:
     build:
-      context: ./srcs/LLM
+      context: ./srcs/ollama
+      dockerfile: Dockerfile # Assuming the Dockerfile is named as such
     container_name: test_ollama
     restart: unless-stopped
     volumes:
       - ollama_data:/root/.ollama
     ports:
       - "11434:11434"
-      
+    networks:
+      - webscraper-net
+
 volumes:
   ollama_data:
 

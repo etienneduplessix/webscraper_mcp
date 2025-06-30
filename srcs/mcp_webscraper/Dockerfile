@@ -1,4 +1,3 @@
-# ── srcs/mcp_webscraper/Dockerfile ──
 FROM node:20-alpine
 WORKDIR /usr/src/app
 
@@ -7,5 +6,4 @@ RUN npm ci
 
 COPY . .
 
-# <-- Change this line:
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]
