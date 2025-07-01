@@ -1,7 +1,7 @@
 {
   "name": "telegram-ollama-bot",
   "version": "1.0.0",
-  "description": "A basic Telegram chatbot powered by Ollama",
+  "description": "A Telegram chatbot with MCP server for Playwright web scraping and Ollama integration",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -11,6 +11,8 @@
   "dependencies": {
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "playwright": "^1.48.1",
     "telegraf": "^4.16.3"
   },
   "devDependencies": {

@@ -19,6 +19,7 @@ services:
       - ollama
     volumes:
       - ./srcs/mcp_webscraper:/usr/src/app
+      - webscraper_node_modules:/usr/src/app/node_modules
     # Required for Playwright browser dependencies
     cap_add:
       - SYS_ADMIN
@@ -36,6 +37,7 @@ services:
 
 volumes:
   ollama_data:
+  webscraper_node_modules:
 
 networks:
   webscraper-net:
