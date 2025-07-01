@@ -2,20 +2,29 @@ version: "3.9"
 
 services:
   mcp-webscraper:
-    build: ./srcs/mcp_webscraper
+    build:
+      context: ./srcs/mcp_webscraper
+      dockerfile: Dockerfile
     container_name: webscraper
     ports:
-      - "8080:8080"
+      - "8081:8080"
     environment:
       - TZ=Europe/Prague
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - OLLAMA_URL=http://ollama:11434
+      - OLLAMA_MODEL=gemma3:1b
     networks:
       - webscraper-net
+    depends_on:
+      - ollama
+    volumes:
+      - ./srcs/mcp_webscraper:/usr/src/app
+    # Required for Playwright browser dependencies
+    cap_add:
+      - SYS_ADMIN
 
   ollama:
-    build:
-      context: ./srcs/ollama
-      dockerfile: Dockerfile # Assuming the Dockerfile is named as such
+    image: ollama/ollama:latest
     container_name: test_ollama
     restart: unless-stopped
     volumes:
